@@ -30,3 +30,7 @@ Select retailer → Browse products → Add to cart → Review → Submit order 
 
 - 1 sales rep, 3 retailers, 16 products across 5 categories
 - Run `python seed.py` to reset the database
+
+## API
+
+Backend runs on http://localhost:8000 — docs at http://localhost:8000/docs
