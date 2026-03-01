@@ -11,6 +11,7 @@ import Cart from './pages/Cart';
 import OrderReview from './pages/OrderReview';
 import OrderConfirmation from './pages/OrderConfirmation';
 import OrderHistory from './pages/OrderHistory';
+import CartFromText from './pages/CartFromText';
 
 function AppLayout({ children }) {
   return (
@@ -28,70 +29,15 @@ export default function App() {
         <CartProvider>
           <Routes>
             <Route path="/login" element={<Login />} />
-            <Route
-              path="/"
-              element={
-                <ProtectedRoute>
-                  <AppLayout><RetailerList /></AppLayout>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/retailers/:id"
-              element={
-                <ProtectedRoute>
-                  <AppLayout><RetailerDetail /></AppLayout>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/products"
-              element={
-                <ProtectedRoute>
-                  <AppLayout><ProductCatalog /></AppLayout>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/cart"
-              element={
-                <ProtectedRoute>
-                  <AppLayout><Cart /></AppLayout>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/review"
-              element={
-                <ProtectedRoute>
-                  <AppLayout><OrderReview /></AppLayout>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/confirmation/:id"
-              element={
-                <ProtectedRoute>
-                  <AppLayout><OrderConfirmation /></AppLayout>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/orders"
-              element={
-                <ProtectedRoute>
-                  <AppLayout><OrderHistory /></AppLayout>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/orders/:id"
-              element={
-                <ProtectedRoute>
-                  <AppLayout><OrderConfirmation /></AppLayout>
-                </ProtectedRoute>
-              }
-            />
+            <Route path="/" element={<ProtectedRoute><AppLayout><RetailerList /></AppLayout></ProtectedRoute>} />
+            <Route path="/retailers/:id" element={<ProtectedRoute><AppLayout><RetailerDetail /></AppLayout></ProtectedRoute>} />
+            <Route path="/products" element={<ProtectedRoute><AppLayout><ProductCatalog /></AppLayout></ProtectedRoute>} />
+            <Route path="/cart" element={<ProtectedRoute><AppLayout><Cart /></AppLayout></ProtectedRoute>} />
+            <Route path="/review" element={<ProtectedRoute><AppLayout><OrderReview /></AppLayout></ProtectedRoute>} />
+            <Route path="/confirmation/:id" element={<ProtectedRoute><AppLayout><OrderConfirmation /></AppLayout></ProtectedRoute>} />
+            <Route path="/orders" element={<ProtectedRoute><AppLayout><OrderHistory /></AppLayout></ProtectedRoute>} />
+            <Route path="/orders/:id" element={<ProtectedRoute><AppLayout><OrderConfirmation /></AppLayout></ProtectedRoute>} />
+            <Route path="/cart/from-text" element={<ProtectedRoute><AppLayout><CartFromText /></AppLayout></ProtectedRoute>} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </CartProvider>

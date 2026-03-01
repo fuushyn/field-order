@@ -19,12 +19,9 @@ export default function Navbar() {
           Field Order
         </Link>
         <div className="flex items-center gap-4">
-          <Link to="/" className="hover:text-blue-200 text-sm">
-            Retailers
-          </Link>
-          <Link to="/orders" className="hover:text-blue-200 text-sm">
-            Orders
-          </Link>
+          <Link to="/" className="hover:text-blue-200 text-sm">Retailers</Link>
+          <Link to="/orders" className="hover:text-blue-200 text-sm">Orders</Link>
+          <Link to="/cart/from-text" className="hover:text-blue-200 text-sm">📷 Smart Order</Link>
           <Link to="/cart" className="hover:text-blue-200 text-sm relative">
             Cart
             {itemCount > 0 && (
@@ -34,12 +31,7 @@ export default function Navbar() {
             )}
           </Link>
           <span className="text-sm text-blue-200 ml-2">{rep?.name}</span>
-          <button
-            onClick={handleLogout}
-            className="text-sm bg-blue-800 hover:bg-blue-900 px-3 py-1 rounded"
-          >
-            Logout
-          </button>
+          <button onClick={handleLogout} className="text-sm bg-blue-800 hover:bg-blue-900 px-3 py-1 rounded">Logout</button>
         </div>
       </div>
     </nav>
